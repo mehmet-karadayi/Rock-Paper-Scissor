@@ -1,3 +1,28 @@
+// gsap.from("#title",{
+//     opacity: 0,
+//     duration: 3,
+//     x: -1000,
+//     ease:"Power.easeInOut"
+// })
+
+// gsap.from("#subtitle",{
+//     opacity: 0,
+//     duration: 3,
+//     x: 1000,
+//     ease:"Power.easeInOut"
+// })
+function animateHeader (text, xPos){
+    gsap.from(text,{
+        opacity: 0,
+        duration: 3,
+        x: xPos,
+        ease:"Power.easeInOut"
+    })
+}
+
+animateHeader('#title', -1000);
+animateHeader('#subtitle', 1000);
+
 function getComputerChoice() {
     const choices = ["rock","paper","scissor"];
     let choice = choices[Math.floor(Math.random()*3)];
@@ -68,6 +93,3 @@ function game(){
 let wins = 0;
 let losses = 0;
 
-for(let i= 0; i<5; i++){
-    console.log(game())
-}
