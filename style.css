@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Chakra+Petch&display=swap');
 
-body, header{
+body, header, #container1{
     display:flex;
 }
 
 body,header{
     flex-direction: column;
+}
+
+#container1{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
 }
 
 body{
@@ -21,8 +27,8 @@ header{
     max-width: 100%;
     justify-content: center;
     align-items: center;
-    border: 2px solid white;
-    border-bottom: 1px solid white;
+    /* border: 2px solid white;
+    border-bottom: 1px solid white; */
 }
 
 #title{
@@ -40,7 +46,107 @@ header{
 #container1{
     max-width: 100%;
     height: 400px;
-    border: 2px solid white;
     color:white;
-    border-top: 1px solid white;
+    /* border: 2px solid white;
+    border-top: 1px solid white; */
 }
+
+#btn1, #btn2, #btn3{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: black;
+    border: none;
+    background-size: contain;
+}
+
+#btn1{
+    background-image: url(images/Rock.png);
+}
+
+#btn2{
+    background-image: url(images/Paper.png);
+}
+
+#btn3{
+    background-image: url(images/Scissor.png);
+}
+
+#btn1:hover{
+    width: 230px;
+    height: 230px;
+    
+}
+#btn2:hover{
+    width: 230px;
+    height: 230px;
+}
+#btn3:hover{
+    width: 230px;
+    height: 230px;
+}
+
+.glowing-circle1,
+.glowing-circle2,
+.glowing-circle3 {
+    width: 100px;
+    height: 100px;
+    border-radius:50%;
+    
+  }
+
+.glowing-circle1{
+    box-shadow: 0 0 20px 10px #fff, 0 0 30px 10px #b400ff, 0 0 50px 20px #ff00d4;
+}
+
+.glowing-circle2{
+    box-shadow: 0 0 20px 10px #fff, 0 0 30px 10px #ffec00, 0 0 50px 20px #d2ff00;
+}
+
+.glowing-circle3{
+    box-shadow: 0 0 20px 10px #fff, 0 0 30px 10px #00ffe3, 0 0 50px 20px #00e3ff;
+}
+
+.animate {
+    -webkit-animation-duration: 4s;
+    animation-duration: 4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+
+  .one {
+    -webkit-animation-delay: 0.5s;
+    -moz-animation-delay: 0.5s;
+    animation-delay: 0.5s;
+    }
+    .two {
+        -webkit-animation-delay: 1s;
+        -moz-animation-delay: 1s;
+        animation-delay: 1s;
+        }
+        .three {
+            -webkit-animation-delay: 1.5s;
+            -moz-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+            }
+
+
+ 
+      @-webkit-keyframes fadeIn {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
+        to {
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      .fadeIn {
+        -webkit-animation-name: fadeIn;
+        animation-name: fadeIn;
+      }
+
+      
