@@ -1,16 +1,3 @@
-// gsap.from("#title",{
-//     opacity: 0,
-//     duration: 3,
-//     x: -1000,
-//     ease:"Power.easeInOut"
-// })
-
-// gsap.from("#subtitle",{
-//     opacity: 0,
-//     duration: 3,
-//     x: 1000,
-//     ease:"Power.easeInOut"
-// })
 function animateHeader (text, xPos){
     gsap.from(text,{
         opacity: 0,
@@ -19,9 +6,35 @@ function animateHeader (text, xPos){
         ease:"Power.easeInOut"
     })
 }
-
 animateHeader('#title', -1000);
 animateHeader('#subtitle', 1000);
+
+
+const rock = document.querySelector("#btn1")
+rock.addEventListener('click', e => {
+
+
+    console.log(playRound("rock", getComputerChoice()))
+    
+})
+
+const paper = document.querySelector("#btn2")
+paper.addEventListener('click', e => {
+   
+
+    console.log(playRound('paper', getComputerChoice()))
+    
+})
+
+const scissor = document.querySelector("#btn3")
+scissor.addEventListener('click', e => {
+    
+
+    console.log(playRound("scissor", getComputerChoice()))
+    
+})
+
+
 
 function getComputerChoice() {
     const choices = ["rock","paper","scissor"];
@@ -32,37 +45,34 @@ function getComputerChoice() {
 function playRound (playerSelection, computerSelection){
     let result;
     let text;
-    switch (playerSelection.toLowerCase()){
+    switch (playerSelection){
         case "rock":
-            if (computerSelection == "rock"){
-                result = -1;
-            }
-            else if(computerSelection == "scissor"){
+            if (computerSelection == "scissor"){
                 result = 1;
             }
-            else result = 0;
+            else if(computerSelection == "paper"){
+                result = -1;
+            }
             break;
         case "paper":
             if (computerSelection == "rock"){
                 result = 1;
             }
             else if(computerSelection == "scissor"){
-                result = 0;
-            }
-            else result = -1;
-            break;
-        case "scissor":
-            if (computerSelection == "rock"){
-                result = 1;
-            }
-            else if(computerSelection == "scissor"){
                 result = -1;
             }
-            else result = 0;
+            break;
+        case "scissor":
+            if (computerSelection == "paper"){
+                result = 1;
+            }
+            else if(computerSelection == "rock"){
+                result = -1;
+            }
             break;
     }
     
-    if (result == 0){
+    if (result == -1){
         text = 'You Lose! '+ computerSelection +' beats '+ playerSelection+'. ';
     }
     else if (result == 1){
@@ -92,4 +102,7 @@ function game(){
 }
 let wins = 0;
 let losses = 0;
+
+
+
 
