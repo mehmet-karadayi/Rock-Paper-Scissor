@@ -150,6 +150,7 @@ function alertPlayer () {
     replay.setAttribute('id', 'btn4');
 
     if(wins === 5){
+        reset = true;
         centerContent.textContent = "YOU WON!!! YOU BEAT THE COMPUTER!!!";
         center.appendChild(centerContent);
         center.appendChild(replay);
@@ -160,6 +161,7 @@ function alertPlayer () {
     }  
     
     else if(losses === 5){
+        reset = true;
         centerContent.textContent = "YOU LOST!!! THE COMPUTER BEAT YOU!!!";
         center.appendChild(centerContent);
         center.appendChild(replay);
@@ -174,6 +176,7 @@ function alertPlayer () {
 function resetGame(){
     wins = 0;
     losses = 0;
+    reset = false;
     centerContent.textContent = "";
     rightContent.textContent = losses;
     leftContent.textContent = wins;
