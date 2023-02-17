@@ -36,7 +36,6 @@ header {
     max-width: 100%;
     justify-content: center;
     align-items: center;
-
     margin-bottom: 30px;
 }
 
@@ -50,6 +49,7 @@ header {
     font-family: "Chakra Petch";
     font-size: 2em;
     color: white;
+    text-align: center;
 }
 
 #container1, 
