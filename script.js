@@ -148,6 +148,7 @@ function alertPlayer () {
     const replay = document.createElement('button');
     replay.innerText = 'REPLAY?';
     replay.setAttribute('id', 'btn4');
+    replay.style.cssText ='margin-top: 1em;'
 
     if(wins === 5){
         reset = true;
